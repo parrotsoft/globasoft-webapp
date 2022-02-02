@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ITask, TaskService } from '../../services/task.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tasks',
@@ -52,7 +53,15 @@ export class TasksComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.taskService.store(this.form.value).subscribe((resp: any) => {
-        this.onList();
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Tarea registrada de forma correcta',
+          showConfirmButton: false,
+          timer: 1500
+        }).then(() => {
+          this.onList();
+        });
       });
     }
   }

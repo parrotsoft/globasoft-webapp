@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../../services/contact.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -31,7 +32,15 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.contactService.store(this.form.value).subscribe((resp: any) => {
-        this.form.reset();
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Contacto registrado correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        }).then(() => {
+          this.form.reset();
+        });
       });
     }
   }

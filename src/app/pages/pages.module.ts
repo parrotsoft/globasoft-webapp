@@ -12,6 +12,7 @@ import { MapComponent } from './map/map.component';
 import { SharedsModule } from '../shareds/shareds.module';
 import { ImageCardComponent } from './photo-gallery/components/image-card/image-card.component';
 import { ItemTasksComponent } from './tasks/components/item-tasks/item-tasks.component';
+import { HtmlMarkerComponent } from './map/components/html-marker/html-marker.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ItemTasksComponent } from './tasks/components/item-tasks/item-tasks.com
     ContactComponent,
     MapComponent,
     ImageCardComponent,
-    ItemTasksComponent
+    ItemTasksComponent,
+    HtmlMarkerComponent
   ],
   imports: [
     CommonModule,
