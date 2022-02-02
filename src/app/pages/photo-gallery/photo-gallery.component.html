@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-sm-2" *ngFor="let image of listImages">
+    <app-image-card [urlImage]="image.src.medium"></app-image-card>
+  </div>
+</div>
