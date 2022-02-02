@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
@@ -27,7 +28,8 @@ import { ItemTasksComponent } from './tasks/components/item-tasks/item-tasks.com
     PagesRoutingModule,
     SharedsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LeafletModule
   ]
 })
 export class PagesModule { }
