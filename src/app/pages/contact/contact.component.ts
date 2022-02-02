@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,8 @@ export class ContactComponent implements OnInit {
 
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private contactService: ContactService) {
     this.initForm();
   }
 
@@ -24,6 +26,14 @@ export class ContactComponent implements OnInit {
       subject: ['', Validators.required],
       message: ['', Validators.required]
     });
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      this.contactService.store(this.form.value).subscribe((resp: any) => {
+        this.form.reset();
+      });
+    }
   }
 
 }
