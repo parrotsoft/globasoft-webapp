@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
@@ -9,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MapComponent } from './map/map.component';
 import { SharedsModule } from '../shareds/shareds.module';
 import { ImageCardComponent } from './photo-gallery/components/image-card/image-card.component';
+import { ItemTasksComponent } from './tasks/components/item-tasks/item-tasks.component';
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import { ImageCardComponent } from './photo-gallery/components/image-card/image-
     TasksComponent,
     ContactComponent,
     MapComponent,
-    ImageCardComponent
+    ImageCardComponent,
+    ItemTasksComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     SharedsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }
